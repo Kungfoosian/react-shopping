@@ -13,7 +13,8 @@ export default function Store() {
 
       <div>
         {data.map(product => (
-          <div>
+          <div key={product.id}>
+            <img alt='produce'></img>
             <p>{product.name}</p>
             <p>§{product.price}</p>
           </div>  

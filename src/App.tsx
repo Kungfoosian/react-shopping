@@ -1,6 +1,7 @@
-import React from 'react';
 import './App.css';
-import { NavLink, Outlet } from 'react-router-dom';
+import { NavLink, Routes, Route } from 'react-router-dom';
+import Store from './routes/Store';
+import Cart from './routes/Cart';
 
 function App() {
   return (
@@ -10,7 +11,13 @@ function App() {
         <NavLink className='navlink' to='/store'>Store</NavLink>
         <NavLink className='navlink' to='/cart'>Cart</NavLink>
       </nav>
-      <Outlet />
+
+      <Routes>
+        <Route path="/" element={<Store />} />
+        <Route path="/store" element={<Store />} />
+        <Route path="/cart" element={<Cart />} />
+        <Route path="*" element={<h2>You did an oopsie</h2>} />
+      </Routes>
     </div>
   );
 }
