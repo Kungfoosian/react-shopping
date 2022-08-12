@@ -11,15 +11,6 @@ const root = ReactDOM.createRoot(
 );
 root.render(
   <React.StrictMode>
-    {/* <BrowserRouter>
-      <Routes>
-        <Route path='/' element={<App />} >
-          <Route path='/store' element={<Store />} />
-          <Route path='/cart' element={<Cart />} />
-          <Route path='*' element={<h2>No hack pls</h2>} />
-        </Route>
-      </Routes>
-    </BrowserRouter> */}
     <BrowserRouter>
       <App />
     </BrowserRouter>

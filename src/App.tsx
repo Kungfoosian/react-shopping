@@ -3,13 +3,23 @@ import { NavLink, Routes, Route } from 'react-router-dom';
 import Store from './routes/Store';
 import Cart from './routes/Cart';
 
+const logoBrand = require('./assets/logo.png');
+const logoCart = require('./assets/shopping-cart.png');
+const logoStore = require('./assets/store.png');
+
 function App() {
   return (
     <div className="App">
       <nav>
-        <NavLink className='navlink' to='/store'>Logo</NavLink>
-        <NavLink className='navlink' to='/store'>Store</NavLink>
-        <NavLink className='navlink' to='/cart'>Cart</NavLink>
+        <NavLink className='navlink' to='/store'>
+          <img className='logo' src={logoBrand} alt='Brand' />
+        </NavLink>
+        <NavLink className='navlink' to='/store'>
+          <img className='icon' src={logoStore} alt='Store' />
+        </NavLink>
+        <NavLink className='navlink' to='/cart'>
+          <img className='icon' src={logoCart} alt='Cart' />
+        </NavLink>
       </nav>
 
       <Routes>
