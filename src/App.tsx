@@ -14,6 +14,7 @@ function App() {
         <NavLink className='navlink' to='/store'>
           <img className='logo' src={logoBrand} alt='Brand' />
         </NavLink>
+
         <NavLink className='navlink' to='/store'>
           <img className='icon' src={logoStore} alt='Store' />
         </NavLink>

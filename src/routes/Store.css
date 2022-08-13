@@ -1,0 +1,37 @@
+form.search-bar {
+  height: 10%;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+}
+
+form.search-bar > label {
+  width: max(200px, 80%);
+}
+
+form.search-bar > label > input {
+  width: 100%;
+  border-radius: 8px;
+  font-size: 18px;
+  padding: 8px 10px;
+}
+
+.product-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+
+  padding: 20px;
+
+  overflow-y: scroll;
+}
+
+.product-container > .product {
+  border: 1px solid black;
+
+  /* min-width: 200px; */
+  /* width: 45%; */
+  width: max(200px, 45%);
+  height: 100px;
+}
