@@ -13,16 +13,25 @@ export default function Store() {
   }
 
   useEffect(() => {
-    console.log(data);
-    if(itemToFind === '') return;
+    if(itemToFind === '') {
+      setFilteredData(data);
+      return;
+    };
 
-    // setFilteredData(data.filter(item => item.name == itemToFind));
-
-    // let filter = data.find(item => item.name.includes(itemToFind))
     let filter: Data[] = data.filter(item => item.name.includes(itemToFind))
-    // console.log(filter);
+
     setFilteredData(filter);
   }, [itemToFind]);
+
+  function displayProducts(products: Data[]) {
+    return products.map(product => (
+      <div key={product.id} className='product'>
+        <img alt='produce'></img>
+        <p>{product.name}</p>
+        <p>§{product.price}</p>
+      </div>  
+    ))
+  }
 
   return (
     <main>
@@ -33,13 +42,7 @@ export default function Store() {
       </form>
 
       <div className='product-container'>
-        {data.map(product => (
-          <div key={product.id} className='product'>
-            <img alt='produce'></img>
-            <p>{product.name}</p>
-            <p>§{product.price}</p>
-          </div>  
-        ))}
+        {filteredData? displayProducts(filteredData) : displayProducts(data)}
       </div>
     </main>
   )

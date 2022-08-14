@@ -4,6 +4,7 @@ export type Data = {
   id: string,
   name: string,
   category: string,
+  image: string,
   price: number,
   quantity: number
 }
@@ -13,6 +14,7 @@ let data: Data[] = [
     id: uuid(),
     name: 'lemon grass',
     category: 'vegetable',
+    image:'lemongrass.jpg',
     price: 2,
     quantity: 10
   },
@@ -20,6 +22,7 @@ let data: Data[] = [
     id: uuid(),
     name: 'carrot',
     category: 'vegetable',
+    image:'carrot.jpg',
     price: 2,
     quantity: 2
   },
@@ -27,6 +30,7 @@ let data: Data[] = [
     id: uuid(),
     name: 'leek',
     category: 'vegetable',
+    image:'leek.jpg',
     price: 3,
     quantity: 20
   },
@@ -34,6 +38,7 @@ let data: Data[] = [
     id: uuid(),
     name: 'mung bean',
     category: 'vegetable',
+    image:'mungbean.jpg',
     price: 5,
     quantity: 11
   },
@@ -41,6 +46,7 @@ let data: Data[] = [
     id: uuid(),
     name: 'bok choy',
     category: 'vegetable',
+    image:'bokchoy.jpg',
     price: 2,
     quantity: 3
   },
@@ -48,6 +54,7 @@ let data: Data[] = [
     id: uuid(),
     name: 'tomato',
     category: 'vegetable',
+    image:'tomato.jpg',
     price: 65,
     quantity: 1
   },
@@ -55,6 +62,7 @@ let data: Data[] = [
     id: uuid(),
     name: 'hubbard squash',
     category: 'vegetable',
+    image:'squash.jpg',
     price: 5,
     quantity: 51
   },
@@ -62,6 +70,7 @@ let data: Data[] = [
     id: uuid(),
     name: 'onion',
     category: 'vegetable',
+    image:'onion.jpg',
     price: 10,
     quantity: 10
   },
@@ -69,6 +78,7 @@ let data: Data[] = [
     id: uuid(),
     name: 'quandong',
     category: 'vegetable',
+    image:'quandong.jpg',
     price: 11,
     quantity: 6
   },
@@ -76,6 +86,7 @@ let data: Data[] = [
     id: uuid(),
     name: 'acorn squash',
     category: 'vegetable',
+    image:'squash.jpg',
     price: 4,
     quantity: 11
   },
