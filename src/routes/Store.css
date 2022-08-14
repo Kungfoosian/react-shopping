@@ -29,9 +29,18 @@ form.search-bar > label > input {
 
 .product-container > .product {
   border: 1px solid black;
-
-  /* min-width: 200px; */
+  
+  max-width: 300px;
   /* width: 45%; */
-  width: max(200px, 45%);
-  height: 100px;
+  /* width: ; */
+  /* height: 100px; */
+}
+
+.product-container > .product > .img-container {
+  max-width:300px;
+  height:auto;
+}
+
+.product-container > .product > .img-container > img {
+  width: 100%;
 }

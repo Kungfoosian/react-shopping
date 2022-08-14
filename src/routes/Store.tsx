@@ -26,7 +26,9 @@ export default function Store() {
   function displayProducts(products: Data[]) {
     return products.map(product => (
       <div key={product.id} className='product'>
-        <img alt='produce'></img>
+        <div className='img-container'>
+          <img alt='produce' src={require(`../assets/${product.image}`)}></img>
+        </div>
         <p>{product.name}</p>
         <p>§{product.price}</p>
       </div>  
