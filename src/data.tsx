@@ -53,7 +53,7 @@ let data: Data[] = [
   {
     id: uuid(),
     name: 'tomato',
-    category: 'vegetable',
+    category: 'fruit',
     image:'tomato.jpg',
     price: 65,
     quantity: 1
@@ -62,7 +62,7 @@ let data: Data[] = [
     id: uuid(),
     name: 'hubbard squash',
     category: 'vegetable',
-    image:'squash.jpg',
+    image:'hubbardsquash.jpg',
     price: 5,
     quantity: 51
   },
@@ -76,9 +76,9 @@ let data: Data[] = [
   },
   {
     id: uuid(),
-    name: 'quandong',
-    category: 'vegetable',
-    image:'quandong.jpg',
+    name: 'durian',
+    category: 'fruit',
+    image:'durian.jpg',
     price: 11,
     quantity: 6
   },
@@ -86,7 +86,7 @@ let data: Data[] = [
     id: uuid(),
     name: 'acorn squash',
     category: 'vegetable',
-    image:'squash.jpg',
+    image:'acornsquash.jpg',
     price: 4,
     quantity: 11
   },

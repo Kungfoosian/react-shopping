@@ -21,7 +21,7 @@ export default function Store() {
     let filter: Data[] = data.filter(item => item.name.includes(itemToFind))
 
     setFilteredData(filter);
-  }, [itemToFind]);
+  }, [itemToFind, data]);
 
   function displayProducts(products: Data[]) {
     return products.map(product => (
@@ -44,7 +44,7 @@ export default function Store() {
       </form>
 
       <div className='product-container'>
-        {filteredData? displayProducts(filteredData) : displayProducts(data)}
+        {filteredData.length > 0 ? displayProducts(filteredData) : displayProducts(data)}
       </div>
     </main>
   )
