@@ -2,12 +2,25 @@ import './App.css';
 import { NavLink, Routes, Route } from 'react-router-dom';
 import Store from './routes/Store';
 import Cart from './routes/Cart';
+import { Data, getData } from './data';
+import { useEffect } from 'react';
+
 
 const logoBrand = require('./assets/logo.png');
 const logoCart = require('./assets/shopping-cart.png');
 const logoStore = require('./assets/store.png');
 
 function App() {
+  let data: Data[] = getData();
+
+  // useEffect(() => {
+  //   data.forEach(item => console.log(item.name))
+  // })
+  
+  function addToCart() {
+    console.log('hello')
+  }
+
   return (
     <div className="App">
       <nav>
@@ -24,8 +37,10 @@ function App() {
       </nav>
 
       <Routes>
-        <Route path="/" element={<Store />} />
-        <Route path="/store" element={<Store />} />
+        <Route path="/" element={
+          <Store addToCart={addToCart} data={data} />
+        } />
+        <Route path="/store" element={<Store addToCart={addToCart} />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="*" element={<h2>You did an oopsie</h2>} />
       </Routes>

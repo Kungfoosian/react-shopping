@@ -1,12 +1,17 @@
 import './Store.css'
-import { Data, getData } from '../data';
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
+import { Data } from '../data';
+import Counter from '../component/Counter';
 
-export default function Store() {
-  let data: Data[] = getData();
+export default function Store(props: any) {
+  // const [ data, setData ] = useState<Data[]>([]);
+  const data: Data[] = props.data;
+
   const [ filteredData, setFilteredData ] = useState(data);
 
   const [ itemToFind, setItemToFind ] = useState('');
+
+  const counterRef = useRef(null);
 
   function findItem(name: string) {
     setItemToFind(name);
@@ -23,14 +28,25 @@ export default function Store() {
     setFilteredData(filter);
   }, [itemToFind, data]);
 
+  function addToCart(event: any) {
+    let itemId: string = event.target.parentElement.id;
+
+    // console.log(counterRef.current.value)
+    if(counterRef?.current !== null) console.log(counterRef.current);
+  }
+
   function displayProducts(products: Data[]) {
     return products.map(product => (
-      <div key={product.id} className='product'>
+      <div key={product.id} id={product.id} className='product'>
         <div className='img-container'>
           <img alt='produce' src={require(`../assets/${product.image}`)}></img>
         </div>
-        <p>{product.name}</p>
+        <p className='product-title'>{product.name}</p>
         <p>§{product.price}</p>
+
+        <Counter id={product.id} ref={counterRef} />        
+
+        <button onClick={addToCart}>Add To Cart</button>
       </div>  
     ))
   }
