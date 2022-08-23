@@ -3,7 +3,6 @@ import { NavLink, Routes, Route } from 'react-router-dom';
 import Store from './routes/Store';
 import Cart from './routes/Cart';
 import { Data, getData } from './data';
-import { useEffect } from 'react';
 
 
 const logoBrand = require('./assets/logo.png');
