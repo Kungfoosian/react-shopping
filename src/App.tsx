@@ -87,7 +87,7 @@ function App() {
           })
         }
          
-        <Route path="/cart" element={<Cart />} />
+        <Route path="/cart" element={<Cart data={cart} />} />
         <Route path="*" element={<h2>You did an oopsie</h2>} />
       </Routes>
     </div>
