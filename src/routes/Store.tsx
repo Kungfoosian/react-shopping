@@ -25,13 +25,7 @@ export default function Store(props: any) {
     setFilteredData(filter);
   }, [itemToFind, data]);
 
-  function addToCart(event: any) {
-    let itemId: string = event.target.parentElement.id;
 
-    let itemAmount: number = parseInt(document.getElementById(`${itemId}-amount`)?.innerText!);
-    
-    console.log(itemAmount);
-  }
 
   function displayProducts(products: Data[]) {
     return products.map((product, index) => (
@@ -44,7 +38,7 @@ export default function Store(props: any) {
 
         <Counter id={product.id} />        
 
-        <button onClick={addToCart}>Add To Cart</button>
+        <button onClick={props.addToCart}>Add To Cart</button>
       </div>  
     ))
   }

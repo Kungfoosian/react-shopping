@@ -93,3 +93,7 @@ let data: Data[] = [
 ]
 
 export function getData() { return data }
+
+export function findData(id: string) {
+  return data.find(item => item.id === id);
+}
