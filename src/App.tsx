@@ -5,7 +5,7 @@ import Cart from './routes/Cart';
 import { Data, getData, findData } from './data';
 import { useEffect, useState } from 'react';
 
-type cartItem = {
+export type cartItem = {
   id: string,
   name: string,
   qty: number,
@@ -19,13 +19,14 @@ const logoStore = require('./assets/store.png');
 function App() {
   let data: Data[] = getData();
 
-  let [cart, editCart] = useState<cartItem[]>([]);
+  const [cart, editCart] = useState<cartItem[]>([]);
 
   useEffect(() => {
     console.log(cart);
   })
 
   function handleAdd(event: any) {
+    console.log('click');
     let itemId: string = event.target.parentElement.id;
 
     let itemFound: cartItem | undefined = findItem(itemId);
@@ -67,6 +68,8 @@ function App() {
     return editCart([...cartCopy!]);
   }
 
+  function submitOrder() { editCart([]) }
+
   return (
     <div className="App">
       <nav>
@@ -89,7 +92,7 @@ function App() {
           })
         }
          
-        <Route path="/cart" element={<Cart data={cart} />} />
+        <Route path="/cart" element={<Cart data={cart} handleSubmit={submitOrder} />} />
         <Route path="*" element={<h2>You did an oopsie</h2>} />
       </Routes>
     </div>

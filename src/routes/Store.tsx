@@ -38,7 +38,7 @@ export default function Store(props: any) {
 
         <Counter id={product.id} />        
 
-        <button onClick={props.addToCart}>Add To Cart</button>
+        <button onClick={props.handleAdd}>Add To Cart</button>
       </div>  
     ))
   }
