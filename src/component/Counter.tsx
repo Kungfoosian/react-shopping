@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 export default function Counter(props: any) {
-  const [amount, setAmount] = useState(1);
+  const [amount, setAmount] = useState(props.amount);
 
   function subtract(){
     if(amount === 0) return;

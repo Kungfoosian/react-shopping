@@ -3,13 +3,14 @@ import { NavLink, Routes, Route } from 'react-router-dom';
 import Store from './routes/Store';
 import Cart from './routes/Cart';
 import { Data, getData, findData } from './data';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
 export type cartItem = {
   id: string,
   name: string,
   qty: number,
-  thumbnail: string
+  thumbnail: string,
+  price: number
 }
 
 const logoBrand = require('./assets/logo.png');
@@ -21,12 +22,7 @@ function App() {
 
   const [cart, editCart] = useState<cartItem[]>([]);
 
-  useEffect(() => {
-    console.log(cart);
-  })
-
   function handleAdd(event: any) {
-    console.log('click');
     let itemId: string = event.target.parentElement.id;
 
     let itemFound: cartItem | undefined = findItem(itemId);
@@ -50,7 +46,8 @@ function App() {
       id: itemId,
       name: item.name,
       qty: itemAmount,
-      thumbnail: item.image
+      thumbnail: item.image,
+      price: item.price
     };
 
     return editCart([...cart!, newCartItem]);
