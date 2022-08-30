@@ -22,7 +22,7 @@ function App() {
 
   const [cart, editCart] = useState<cartItem[]>([]);
 
-  function handleAdd(event: any) {
+  function handleEdit(event: any) {
     let itemId: string = event.target.parentElement.id;
 
     let itemFound: cartItem | undefined = findItem(itemId);
@@ -30,11 +30,11 @@ function App() {
     let itemAmount: number = parseInt(document.getElementById(`${itemId}-amount`)?.innerText!);
 
     // Check if cart already has item
-    //  If yes, add qty into item qty and update the cart
     //  If no, add new item
+    //  If yes, add qty into item qty and update the cart
     if(itemFound === undefined) return addToCart(itemId, itemAmount);
     
-    return editItemInCart(itemFound, itemId, itemAmount);
+    return editItemInCart(itemId, itemAmount);
   }
 
   function findItem(itemId: string): cartItem | undefined { return cart?.find(item => item.id === itemId) }
@@ -53,14 +53,16 @@ function App() {
     return editCart([...cart!, newCartItem]);
   }
 
-  function editItemInCart(item: cartItem, itemId: string, itemAmount: number): void{
-    item.qty += itemAmount;
+  function editItemInCart(itemId: string, itemAmount: number): void{
+    let itemFound: cartItem = cart.find(item => item.id === itemId)!;
+    
+    itemFound!.qty += itemAmount;
       
     let itemIndex: number | undefined = cart?.findIndex(item => item.id === itemId);
 
     let cartCopy = cart;
 
-    cartCopy?.splice(itemIndex!, 1, item);
+    cartCopy?.splice(itemIndex!, 1, itemFound);
 
     return editCart([...cartCopy!]);
   }
@@ -85,11 +87,11 @@ function App() {
       <Routes>
         {
           ['/', 'store'].map(path => {
-            return <Route key="store" path={path} element={<Store handleAdd={handleAdd} data={data} />} />
+            return <Route key="store" path={path} element={<Store handleEdit={handleEdit} data={data} />} />
           })
         }
          
-        <Route path="/cart" element={<Cart data={cart} handleSubmit={submitOrder} />} />
+        <Route path="/cart" element={<Cart data={cart} handleSubmit={submitOrder} handleEdit={editItemInCart} />} />
         <Route path="*" element={<h2>You did an oopsie</h2>} />
       </Routes>
     </div>

@@ -7,12 +7,16 @@ export default function Counter(props: any) {
     if(amount === 0) return;
     
     setAmount(amount - 1);
+
+    if(props.handleEdit !== undefined) props.handleEdit(props.id, amount);
   }
   
   function add() {
     if(amount === 10) return;
-
+    
     setAmount(amount + 1);
+    
+    if(props.handleEdit !== undefined) props.handleEdit(props.id, amount);
   }
 
   return (
