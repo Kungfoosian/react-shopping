@@ -1,1 +1,1 @@
-figure out subtotal
+figure out subtotal issue where it updates slower than the number

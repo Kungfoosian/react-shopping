@@ -56,7 +56,7 @@ function App() {
   function editItemInCart(itemId: string, itemAmount: number): void{
     let itemFound: cartItem = cart.find(item => item.id === itemId)!;
     
-    itemFound!.qty += itemAmount;
+    itemFound!.qty = itemAmount;
       
     let itemIndex: number | undefined = cart?.findIndex(item => item.id === itemId);
 

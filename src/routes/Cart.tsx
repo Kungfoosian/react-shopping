@@ -5,14 +5,14 @@ import { useEffect, useState } from 'react';
 
 export default function Cart(props: any) {
   const data: cartItem[] = props.data;
-  const [subTotal, setSubTotal] = useState(getSubTotal());
+  const [subTotal, setSubTotal] = useState(0);
 
   // useEffect(() => data = props.data)
 
-  // useEffect(() => {
-  //   console.log(data);
-  //   setSubTotal(getSubTotal());
-  // }, [data])
+  useEffect(() => {
+    // console.log(data);
+    setSubTotal(getSubTotal());
+  }, [data])
 
   function getSubTotal() {
     let result = 0;
@@ -21,6 +21,7 @@ export default function Cart(props: any) {
       // console.log(item);
       result += item.qty * item.price;
       console.log(`result now is ${result}`);
+      setSubTotal(result);
     })
     
     return result;
