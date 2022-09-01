@@ -11,6 +11,7 @@ export default function Cart(props: any) {
 
   useEffect(() => {
     // console.log(data);
+    console.log('component re-rendered');
     setSubTotal(getSubTotal());
   }, [data])
 

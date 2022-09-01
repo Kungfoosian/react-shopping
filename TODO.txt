@@ -1,1 +1,3 @@
-figure out subtotal issue where it updates slower than the number
+styling
+
+add number to cart for each item in cart
