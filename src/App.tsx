@@ -22,7 +22,7 @@ function App() {
 
   const [cart, editCart] = useState<cartItem[]>([]);
 
-  function handleEdit(event: any) {
+  function submitItemToCart(event: any) {
     let itemId: string = event.target.parentElement.id;
 
     let itemFound: cartItem | undefined = findItem(itemId);
@@ -55,6 +55,7 @@ function App() {
 
   function editItemInCart(itemId: string, itemAmount: number): void{
     let itemFound: cartItem = cart.find(item => item.id === itemId)!;
+    console.log(`${itemFound.name} : ${itemAmount}`);
     
     itemFound!.qty = itemAmount;
       
@@ -89,7 +90,7 @@ function App() {
       <Routes>
         {
           ['/', 'store'].map(path => {
-            return <Route key="store" path={path} element={<Store handleEdit={handleEdit} data={data} />} />
+            return <Route key="store" path={path} element={<Store handleSubmit={submitItemToCart} data={data} />} />
           })
         }
          
