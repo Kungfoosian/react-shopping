@@ -1,3 +1,5 @@
 styling
 
 add number to cart for each item in cart
+
+remove item from cart if amount is 0

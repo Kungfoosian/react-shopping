@@ -64,6 +64,8 @@ function App() {
 
     cartCopy?.splice(itemIndex!, 1, itemFound);
 
+    if(itemAmount === 0) { cartCopy.splice(itemIndex, 1) }
+
     return editCart([...cartCopy!]);
   }
 

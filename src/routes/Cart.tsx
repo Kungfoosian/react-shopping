@@ -7,26 +7,19 @@ export default function Cart(props: any) {
   const data: cartItem[] = props.data;
   const [subTotal, setSubTotal] = useState(0);
 
-  // useEffect(() => data = props.data)
-
   useEffect(() => {
-    // console.log(data);
-    console.log('component re-rendered');
     setSubTotal(getSubTotal());
   }, [data])
 
   function getSubTotal() {
     let result = 0;
     data.forEach(item => {
-      console.log(`current result is ${result}`);
-      // console.log(item);
       result += item.qty * item.price;
-      console.log(`result now is ${result}`);
+
       setSubTotal(result);
     })
     
     return result;
-    // console.log(`subtotal is ${subTotal}`);
   }
 
   function displayCart() {
