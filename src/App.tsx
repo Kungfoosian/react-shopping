@@ -55,17 +55,18 @@ function App() {
 
   function editItemInCart(itemId: string, itemAmount: number): void{
     let itemFound: cartItem = cart.find(item => item.id === itemId)!;
-    console.log(`${itemFound.name} : ${itemAmount}`);
     
     itemFound!.qty = itemAmount;
-      
+    
     let itemIndex: number | undefined = cart?.findIndex(item => item.id === itemId);
-
+    
     let cartCopy = cart;
-
+    
     cartCopy?.splice(itemIndex!, 1, itemFound);
-
+    
     if(itemAmount === 0) { cartCopy.splice(itemIndex, 1) }
+    
+    console.log(`${itemFound.name} : ${itemAmount}`);
 
     return editCart([...cartCopy!]);
   }

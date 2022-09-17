@@ -1,5 +1,3 @@
 styling
 
 add number to cart for each item in cart
-
-cart not deleting item when amount reach 0 (not updating fast enough)

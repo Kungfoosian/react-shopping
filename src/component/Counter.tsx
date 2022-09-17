@@ -1,22 +1,26 @@
 import { useEffect, useState } from "react";
 
 export default function Counter(props: any) {
-  const [amount, setAmount] = useState(props.amount);
+  const [amount, setAmount] = useState<number>(props.amount);
+
+  useEffect(() => {
+    setAmount(amount);
+
+    if(props.handleEdit !== undefined) props.handleEdit(props.id, amount);
+  }, [amount])
 
   function subtract(){
     if(amount === 0) return;
-    
-    setAmount(amount -1);
-    
+
+    setAmount(amount => amount - 1);
+
     if(props.handleEdit !== undefined) props.handleEdit(props.id, amount);
   }
   
   function add() {
     if(amount === 10) return;
     
-    setAmount(amount + 1);
-
-    console.log(amount);
+    setAmount(amount => amount + 1);
     
     if(props.handleEdit !== undefined) props.handleEdit(props.id, amount);
   }
