@@ -36,9 +36,7 @@ export default function Store(props: any) {
         <p className='product-title'>{product.name}</p>
         <p>§{product.price}</p>
 
-        {/* <Counter id={product.id} amount={1}/>         */}
         <Counter id={product.id} amount={1} handleEdit={props.handleEdit}/>
-
 
         <button onClick={props.handleSubmit}>Add To Cart</button>
       </div>  

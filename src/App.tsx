@@ -57,16 +57,16 @@ function App() {
     let itemFound: cartItem = cart.find(item => item.id === itemId)!;
     
     itemFound!.qty = itemAmount;
+    // itemFound!.qty += itemAmount; //Doesn't work, multiply by 3 whenever switch between store and cart
     
     let itemIndex: number | undefined = cart?.findIndex(item => item.id === itemId);
     
     let cartCopy = cart;
     
+    console.log(itemFound);
     cartCopy?.splice(itemIndex!, 1, itemFound);
     
     if(itemAmount === 0) { cartCopy.splice(itemIndex, 1) }
-    
-    console.log(`${itemFound.name} : ${itemAmount}`);
 
     return editCart([...cartCopy!]);
   }

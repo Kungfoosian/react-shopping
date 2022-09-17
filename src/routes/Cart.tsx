@@ -9,11 +9,12 @@ export default function Cart(props: any) {
 
   useEffect(() => {
     setSubTotal(getSubTotal());
-  }, [data])
+  }, [props.data])
 
   function getSubTotal() {
     let result = 0;
     data.forEach(item => {
+      console.log(`${item.name}: ${item.qty}`)
       result += item.qty * item.price;
 
       setSubTotal(result);
