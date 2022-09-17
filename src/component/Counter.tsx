@@ -6,7 +6,7 @@ export default function Counter(props: any) {
   useEffect(() => {
     setAmount(amount);
 
-    if(props.handleEdit !== undefined) props.handleEdit(props.id, amount);
+    if(props.handleEdit !== undefined) props.handleEdit(props.id, amount, false);
   }, [amount])
 
   function subtract(){

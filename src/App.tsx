@@ -53,11 +53,11 @@ function App() {
     return editCart([...cart!, newCartItem]);
   }
 
-  function editItemInCart(itemId: string, itemAmount: number): void{
+  function editItemInCart(itemId: string, itemAmount: number, toBeAdded:boolean = true): void{
     let itemFound: cartItem = cart.find(item => item.id === itemId)!;
     
-    itemFound!.qty = itemAmount;
-    // itemFound!.qty += itemAmount; //Doesn't work, multiply by 3 whenever switch between store and cart
+    if(toBeAdded) itemFound!.qty += itemAmount; //Doesn't work, multiply by 3 whenever switch between store and cart
+    else itemFound!.qty = itemAmount;
     
     let itemIndex: number | undefined = cart?.findIndex(item => item.id === itemId);
     
