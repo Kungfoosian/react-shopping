@@ -56,7 +56,7 @@ function App() {
   function editItemInCart(itemId: string, itemAmount: number, toBeAdded:boolean = true): void{
     let itemFound: cartItem = cart.find(item => item.id === itemId)!;
     
-    if(toBeAdded) itemFound!.qty += itemAmount; //Doesn't work, multiply by 3 whenever switch between store and cart
+    if(toBeAdded) itemFound!.qty += itemAmount; 
     else itemFound!.qty = itemAmount;
     
     let itemIndex: number | undefined = cart?.findIndex(item => item.id === itemId);

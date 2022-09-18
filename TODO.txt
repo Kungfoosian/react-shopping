@@ -3,5 +3,3 @@ styling
 add number to cart for each item in cart
 
 add delete buton for items in cart
-
-Switching between cart and store multiplies item in cart by 3
