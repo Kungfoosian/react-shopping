@@ -1,6 +1,6 @@
 import { cartItem } from '../App';
 import './Cart.css';
-import Counter from '../component/Counter';
+import Counter from '../component/CounterAdjustable';
 import { useEffect, useState } from 'react';
 
 export default function Cart(props: any) {

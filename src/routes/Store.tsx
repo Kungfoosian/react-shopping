@@ -1,7 +1,7 @@
 import './Store.css'
 import { useEffect, useState } from 'react';
 import { Data } from '../data';
-import Counter from '../component/Counter';
+import Counter from '../component/CounterAdjustable';
 
 export default function Store(props: any) {
   const data: Data[] = props.data;

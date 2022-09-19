@@ -2,4 +2,3 @@ styling
 
 add number to cart for each item in cart
 
-add delete buton for items in cart

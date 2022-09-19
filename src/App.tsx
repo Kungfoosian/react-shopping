@@ -2,6 +2,7 @@ import './App.css';
 import { NavLink, Routes, Route } from 'react-router-dom';
 import Store from './routes/Store';
 import Cart from './routes/Cart';
+import CounterNonAdjustable from './component/Counter'
 import { Data, getData, findData } from './data';
 import { useState } from 'react';
 
@@ -85,6 +86,8 @@ function App() {
         </NavLink>
         <NavLink className='navlink' to='/cart'>
           <img className='icon' src={logoCart} alt='Cart' />
+          
+          { cart.length > 0 ? <CounterNonAdjustable amount={cart.length} /> : '' }
         </NavLink>
       </nav>
 
