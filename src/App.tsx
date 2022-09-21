@@ -84,10 +84,12 @@ function App() {
         <NavLink className='navlink' to='/store'>
           <img className='icon' src={logoStore} alt='Store' />
         </NavLink>
-        <NavLink className='navlink' to='/cart'>
-          <img className='icon' src={logoCart} alt='Cart' />
-          
-          { cart.length > 0 ? <CounterNonAdjustable amount={cart.length} /> : '' }
+        <NavLink className='navlink' id='navlink-cart' to='/cart'>
+          <div>
+            <img className='icon' src={logoCart} alt='Cart' />
+            
+            { cart.length > 0 ? <CounterNonAdjustable amount={cart.length} /> : '' }
+          </div>        
         </NavLink>
       </nav>
 

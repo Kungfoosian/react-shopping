@@ -55,3 +55,19 @@
 
   align-items: center;
 }
+
+.App > nav > #navlink-cart > div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+
+.App > nav > #navlink-cart > div > .counter-nonadj-container {
+  position: absolute;
+  top: 22%;
+  right: 43%;
+  color: black;
+  font-weight: bold;
+}
