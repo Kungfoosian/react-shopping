@@ -1,4 +1,3 @@
 styling
 
-add number to cart for each item in cart
-
+change navbar to hamburger menu when screen resize

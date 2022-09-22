@@ -1,10 +1,11 @@
 import './App.css';
-import { NavLink, Routes, Route } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import Store from './routes/Store';
 import Cart from './routes/Cart';
-import CounterNonAdjustable from './component/Counter'
 import { Data, getData, findData } from './data';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import NavRegular from './component/NavRegular';
+import NavHamburger from './component/NavHamburger';
 
 export type cartItem = {
   id: string,
@@ -13,10 +14,6 @@ export type cartItem = {
   thumbnail: string,
   price: number
 }
-
-const logoBrand = require('./assets/logo.png');
-const logoCart = require('./assets/shopping-cart.png');
-const logoStore = require('./assets/store.png');
 
 function App() {
   let data: Data[] = getData();
@@ -64,7 +61,6 @@ function App() {
     
     let cartCopy = cart;
     
-    console.log(itemFound);
     cartCopy?.splice(itemIndex!, 1, itemFound);
     
     if(itemAmount === 0) { cartCopy.splice(itemIndex, 1) }
@@ -74,24 +70,23 @@ function App() {
 
   function submitOrder() { editCart([]) }
 
+  const [switchNav, setSwitchNav] = useState(false);
+
+  useEffect(() => {
+    window.addEventListener('resize', () => {
+      console.log('resized to: ', window.innerWidth, 'x', window.innerHeight)
+      
+      if(window.innerWidth < 500) setSwitchNav(true)
+      else setSwitchNav(false)
+    })
+  })
+
   return (
     <div className="App">
-      <nav>
-        <NavLink className='navlink' to='/store'>
-          <img className='logo' src={logoBrand} alt='Brand' />
-        </NavLink>
-
-        <NavLink className='navlink' to='/store'>
-          <img className='icon' src={logoStore} alt='Store' />
-        </NavLink>
-        <NavLink className='navlink' id='navlink-cart' to='/cart'>
-          <div>
-            <img className='icon' src={logoCart} alt='Cart' />
-            
-            { cart.length > 0 ? <CounterNonAdjustable amount={cart.length} /> : '' }
-          </div>        
-        </NavLink>
-      </nav>
+      { switchNav ? 
+          <NavHamburger /> 
+          : <NavRegular cartLength={cart.length} /> 
+      }
 
       <Routes>
         {
