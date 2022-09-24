@@ -73,7 +73,7 @@ function App() {
 
   const [useHamburgerNav, setUseHamburgerNav] = useState(false);
 
-  const { width, height } = useWindowDimensions();
+  const { width } = useWindowDimensions();
   
   useEffect(() => {
     if(width < 500) setUseHamburgerNav(true)

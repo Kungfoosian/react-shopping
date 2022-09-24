@@ -1,34 +1,54 @@
-/* .App.w-hamburger-nav {
+#nav-toggle {
+  width: 35px;
+  height: 35px;
+
+  cursor: pointer;
+  border: none;
+
+  position: fixed;
+  top: 15px;
+  left: 10px;
+
+  background-color: transparent;
+}
+
+#nav-toggle > .hamburger {
   display: block;
-  grid-template-columns: 3fr 10fr;
-  min-height: 100vh;
-  width: 100%;
-} */
-/* .App > nav {
-  padding: 10px;
-  background-color: #e4d1b9;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
+  
+  width: 35px;
+  height: 5px;
+  
+  background-color: black;
+  border-radius: 10px;
+
+  position: relative;
 }
 
-.App > nav > .navlink {
-  width: 100%;
-  height: 20%;
+#nav-toggle > .hamburger > .lines:first-child,
+#nav-toggle > .hamburger > .lines:last-child {
+  display: block;
 
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
+  position: absolute;
+
+  /* width: var(--hamburger-width); */
+  width: 35px;
+  height: 5px;
+
+  background-color: black;
+  /* height: var(--hamburger-height); */
+
+  content: "";
+
+  /* background-color: white; */
+  border-radius: 10px;
+
+  /* transition-duration: var(--trans-duration); */
 }
 
-.App > nav > .navlink > .logo {
-  width: clamp(72px, 100%, 160px);
-  height: auto;
+#nav-toggle > .hamburger > .lines.top-normal {
+  top: -10px;
 }
 
-.icon {
-  width: clamp(42px, 50%, 72px);
-  /* width: 42px; */
-  /* height: auto; */
-/* } */
+#nav-toggle > .hamburger > .lines.bottom-normal {
+  top: 10px;
+}
