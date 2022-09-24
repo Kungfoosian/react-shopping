@@ -12,7 +12,7 @@ export default function NavRegular(props: any){
   let cartLength = props.cartLength;
 
   return (
-    <nav>
+    <nav id='nav-regular'>
         <NavLink className='navlink' to='/store'>
           <img className='logo' src={logoBrand} alt='Brand' />
         </NavLink>

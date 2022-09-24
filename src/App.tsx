@@ -6,6 +6,7 @@ import { Data, getData, findData } from './data';
 import { useEffect, useState } from 'react';
 import NavRegular from './component/NavRegular';
 import NavHamburger from './component/NavHamburger';
+import useWindowDimensions from './hooks/useWindowDimensions';
 
 export type cartItem = {
   id: string,
@@ -70,20 +71,19 @@ function App() {
 
   function submitOrder() { editCart([]) }
 
-  const [switchNav, setSwitchNav] = useState(false);
+  const [useHamburgerNav, setUseHamburgerNav] = useState(false);
 
+  const { width, height } = useWindowDimensions();
+  
   useEffect(() => {
-    window.addEventListener('resize', () => {
-      console.log('resized to: ', window.innerWidth, 'x', window.innerHeight)
-      
-      if(window.innerWidth < 500) setSwitchNav(true)
-      else setSwitchNav(false)
-    })
-  })
+    if(width < 500) setUseHamburgerNav(true)
+    else setUseHamburgerNav(false)
+  }, [width])
+  
 
   return (
-    <div className="App">
-      { switchNav ? 
+    <div className={useHamburgerNav? 'App w-hamburger-nav' : 'App w-regular-nav'}>
+      { useHamburgerNav ? 
           <NavHamburger /> 
           : <NavRegular cartLength={cart.length} /> 
       }
