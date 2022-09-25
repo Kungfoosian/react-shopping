@@ -1,9 +1,6 @@
 import { useState, useEffect } from 'react';
 
 function getWindowDimensions() {
-  console.log('I got called!');
-  // console.log(arguments.callee.caller.toString());
-
   const { innerWidth: width, innerHeight: height } = window;
 
   return { 

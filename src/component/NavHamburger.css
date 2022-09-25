@@ -20,8 +20,14 @@
   
   background-color: black;
   border-radius: 10px;
-
+  
   position: relative;
+
+  transition-duration: .15s;
+}
+
+#nav-toggle > .hamburger.hamburger-close {
+  background-color: transparent;
 }
 
 #nav-toggle > .hamburger > .lines:first-child,
@@ -30,25 +36,34 @@
 
   position: absolute;
 
-  /* width: var(--hamburger-width); */
   width: 35px;
   height: 5px;
 
   background-color: black;
-  /* height: var(--hamburger-height); */
 
   content: "";
 
-  /* background-color: white; */
   border-radius: 10px;
 
-  /* transition-duration: var(--trans-duration); */
+  transition-duration: 0.5s;
 }
 
 #nav-toggle > .hamburger > .lines.top-normal {
   top: -10px;
 }
 
+#nav-toggle > .hamburger > .lines.top-close {
+  transform: rotate(45deg);
+  background-color: black;
+  top:0;
+}
+
 #nav-toggle > .hamburger > .lines.bottom-normal {
   top: 10px;
+}
+
+#nav-toggle > .hamburger > .lines.bottom-close {
+  transform: rotate(-45deg);
+  background-color: black;
+  top:0;
 }
