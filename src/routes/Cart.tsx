@@ -43,7 +43,7 @@ export default function Cart(props: any) {
   }
 
   return (
-    <main>
+    <main className='cart-main'>
       { 
         data.length > 0? 
           displayCart():
