@@ -12,15 +12,15 @@ export default function NavRegular(props: any){
   let cartLength = props.cartLength;
 
   return (
-    <nav id='nav-regular'>
-        <NavLink className='navlink' to='/store'>
+    <nav className={`nav-regular ${props.burgerfied ? 'burgerfied' : '' }`}>
+        <NavLink className='navlink' to='/store' onClick={props.handleClick} >
           <img className='logo' src={logoBrand} alt='Brand' />
         </NavLink>
 
-        <NavLink className='navlink' to='/store'>
+        <NavLink className='navlink' to='/store' onClick={props.handleClick}>
           <img className='icon' src={logoStore} alt='Store' />
         </NavLink>
-        <NavLink className='navlink' id='navlink-cart' to='/cart'>
+        <NavLink className='navlink' id='navlink-cart' to='/cart' onClick={props.handleClick}>
           <div>
             <img className='icon' src={logoCart} alt='Cart' />
             
