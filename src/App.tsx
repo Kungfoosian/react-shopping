@@ -84,7 +84,7 @@ function App() {
   return (
     <div className={useHamburgerNav? 'App w-hamburger-nav' : 'App w-regular-nav'}>
       { useHamburgerNav ? 
-          <NavHamburger /> 
+          <NavHamburger cartLength={cart.length} /> 
           : <NavRegular cartLength={cart.length} /> 
       }
 

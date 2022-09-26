@@ -19,6 +19,20 @@
   z-index: 1;
 }
 
+#nav-toggle > .burger-notify {
+  width: 16px;
+  height: 16px;
+  
+  position: fixed;
+  background-color: white;
+  border-radius: 50%;
+}
+
+#nav-toggle > .burger-notify > img {
+  width: 100%;
+  height: auto;
+}
+
 #nav-toggle > .hamburger {
   display: block;
   
