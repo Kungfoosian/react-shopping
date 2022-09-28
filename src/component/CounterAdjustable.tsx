@@ -1,4 +1,9 @@
+import './CounterAdjustable.css';
+
 import { useEffect, useState } from "react";
+
+const minusIcon = require('../assets/minus-button.png');
+const plusIcon = require('../assets/plus.png');
 
 export default function Counter(props: any) {
   const [amount, setAmount] = useState<number>(props.amount);
@@ -27,9 +32,13 @@ export default function Counter(props: any) {
 
   return (
     <div className='counter-container'>
-      <button onClick={subtract}>-</button>
+      <button onClick={subtract} className='button-container'>
+        <img src={minusIcon} alt='-'></img>
+      </button>
       <p id={`${props.id}-amount`}>{amount}</p>
-      <button onClick={add}>+</button>
+      <button onClick={add} className='button-container'>
+        <img src={plusIcon} alt='+'></img>
+      </button>
     </div>
   )
 }

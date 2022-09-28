@@ -24,9 +24,11 @@ function App() {
   function submitItemToCart(event: any) {
     let itemId: string = event.target.parentElement.id;
 
+    let itemAmount: number = parseInt(document.getElementById(`${itemId}-amount`)?.innerText!);
+    if(itemAmount <= 0 ) return;
+
     let itemFound: cartItem | undefined = findItem(itemId);
     
-    let itemAmount: number = parseInt(document.getElementById(`${itemId}-amount`)?.innerText!);
 
     // Check if cart already has item
     //  If no, add new item

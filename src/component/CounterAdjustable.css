@@ -1,0 +1,18 @@
+.counter-container {
+
+}
+
+.button-container {
+  width: 20px;
+  height: 20px;
+
+  border-radius: 50%;
+  border: none;
+}
+
+/* https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_buttons_animate2 */
+
+.button-container > img {
+  width: 100%;
+  height: auto;
+}
