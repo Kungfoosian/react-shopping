@@ -47,10 +47,39 @@ form.search-bar > label > input {
   max-height: 100%;
 }
 
-.product-container > .product > p {
-  font-family: Helvetica, sans-serif;
+.product-container > .product > .product-info {
+  padding: 8px;
 }
 
-.product-container > .product > p.product-title {
-  font-weight: bold;
+.product-container > .product > .product-info > .product-price-container > .currency {
+  vertical-align: super;
+}
+
+.product-container > .product > .product-info > .product-price-container > .product-price {
+  font-size: 2rem;
+}
+
+.product-container > .product > .product-info > .product-title {
+  margin: 8px 0;
+}
+
+.product-container > .product > .product-info > .submit-btn {
+  width: 50%;
+  padding: 10px 0;
+  margin: 0 auto 2px;
+
+  text-align: center;
+  font-size: 14px;
+  font-weight: 800;
+  
+  background-color: #e4d1b9;
+  border: 2px solid #e4d1b9;
+  
+  transition-duration: .15s;
+}
+
+.product-container > .product > .product-info > .submit-btn:hover {
+  background-color: white;
+  
+  cursor: pointer;
 }

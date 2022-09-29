@@ -1,18 +1,25 @@
 .counter-container {
+  display: flex;
+  gap:5px;
 
+  /* border:1px solid red; */
+  margin: 16px 0;
 }
 
 .button-container {
   width: 20px;
   height: 20px;
-
+  
   border-radius: 50%;
   border: none;
 }
 
-/* https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_buttons_animate2 */
 
 .button-container > img {
   width: 100%;
   height: auto;
+}
+
+.button-container > img:hover {
+  opacity: 0.8;
 }

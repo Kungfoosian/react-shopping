@@ -33,12 +33,20 @@ export default function Store(props: any) {
         <div className='img-container'>
           <img alt='produce' src={require(`../assets/${product.image}`)}></img>
         </div>
-        <p className='product-title'>{product.name}</p>
-        <p>§{product.price}</p>
 
-        <Counter id={product.id} amount={1} handleEdit={props.handleEdit}/>
+        <div className="product-info">
+          <p className='product-price-container'>
+            <span className='currency'>§</span>
 
-        <button onClick={props.handleSubmit}>Add To Cart</button>
+            <span className='product-price'>{product.price}</span>
+          </p>
+
+          <h3 className='product-title'>{product.name}</h3>
+
+          <Counter id={product.id} amount={1} handleEdit={props.handleEdit}/>
+
+          <div className='submit-btn' onClick={props.handleSubmit}>Add To Cart</div>
+        </div>
       </div>  
     ))
   }

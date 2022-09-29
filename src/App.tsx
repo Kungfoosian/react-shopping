@@ -22,7 +22,7 @@ function App() {
   const [cart, editCart] = useState<cartItem[]>([]);
 
   function submitItemToCart(event: any) {
-    let itemId: string = event.target.parentElement.id;
+    let itemId: string = event.target.parentElement.parentElement.id;
 
     let itemAmount: number = parseInt(document.getElementById(`${itemId}-amount`)?.innerText!);
     if(itemAmount <= 0 ) return;
@@ -42,7 +42,7 @@ function App() {
 
   function addToCart(itemId: string, itemAmount: number): void{
     let item: Data = findData(itemId)!;
-    
+    console.log(itemId);
     let newCartItem: cartItem = {
       id: itemId,
       name: item.name,
