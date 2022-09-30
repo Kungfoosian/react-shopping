@@ -33,7 +33,15 @@ export default function Cart(props: any) {
           <p>{item.name}</p>
           <Counter id={item.id} amount={item.qty} handleEdit={props.handleEdit} />
 
-          <button onClick={() => props.handleEdit(item.id, 0) }>Delete</button>
+          <div className="cost-container">
+            <p className='product-price-container'>
+              <span className='currency'>§</span>
+
+              <span className='product-price'>{item.price}</span>
+            </p>
+            
+            <button onClick={() => props.handleEdit(item.id, 0) }>Delete</button>
+          </div>
         </div>
       ))}
 

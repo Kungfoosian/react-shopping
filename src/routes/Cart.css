@@ -5,18 +5,19 @@
 
 .cart-item-container {
   /* display: flex; */
+  /* justify-content: space-between; */
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4,1fr);
+  align-items: center;
+
   border: 1px solid red;
   border-radius: 18px;
-  /* justify-content: center; */
-  width: 50%;
+
+  width: 100%;
 }
 
 .cart-item-container > * {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  border: 1px solid blue;
 }
 .thumbnail-container {
   width: 50px;

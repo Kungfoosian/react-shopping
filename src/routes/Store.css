@@ -75,11 +75,17 @@ form.search-bar > label > input {
   background-color: #e4d1b9;
   border: 2px solid #e4d1b9;
   
-  transition-duration: .15s;
 }
 
 .product-container > .product > .product-info > .submit-btn:hover {
   background-color: white;
   
+  transition-duration: .15s;
+  
   cursor: pointer;
+}
+
+.product-container > .product > .product-info > .submit-btn:active {
+  transition-duration: 0s;
+  background-color: rgba(0,0,0,0.1);
 }
