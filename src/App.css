@@ -29,7 +29,10 @@
 .App > main {
   display: flex;
   flex-direction: column;
+  gap: 12px;
+
   height: 100vh;
+  
 
   align-items: center;
 }

@@ -17,8 +17,26 @@
 }
 
 .cart-item-container > * {
-  border: 1px solid blue;
+  /* border: 1px solid blue; */
+  height: 100%;
+  /* text-align: center; */
+  /* vertical-align:middle; */
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
+
+.cart-item-container > h3 {
+  text-align: center;
+  font-size: 1.25rem;
+}
+
+.cart-item-container > .cost-container {
+  /* flex-direction: column; */
+  gap: 10px;
+}
+
 .thumbnail-container {
   width: 50px;
   height: 50px;

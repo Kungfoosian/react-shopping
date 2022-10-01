@@ -3,6 +3,8 @@ import './Cart.css';
 import Counter from '../component/CounterAdjustable';
 import { useEffect, useState } from 'react';
 
+const iconTrashcan = require('../assets/trash-bin.png');
+
 export default function Cart(props: any) {
   const data: cartItem[] = props.data;
   const [subTotal, setSubTotal] = useState(0);
@@ -28,7 +30,9 @@ export default function Cart(props: any) {
           <div className='thumbnail-container'>
             <img alt='produce' src={require(`../assets/${item.thumbnail}`)}></img>
           </div>
-          <p>{item.name}</p>
+
+          <h3>{item.name}</h3>
+
           <Counter id={item.id} amount={item.qty} handleEdit={props.handleEdit} />
 
           <div className="cost-container">
@@ -38,7 +42,9 @@ export default function Cart(props: any) {
               <span className='product-price'>{getTotalOf(item)}</span>
             </p>
             
-            <button onClick={() => props.handleEdit(item.id, 0) }>Delete</button>
+            <div className='button-container' onClick={() => props.handleEdit(item.id, 0)}>
+              <img src={iconTrashcan} alt='Delete' />
+            </div>
           </div>
         </div>
       ))}

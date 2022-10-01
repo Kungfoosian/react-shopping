@@ -42,7 +42,7 @@ function App() {
 
   function addToCart(itemId: string, itemAmount: number): void{
     let item: Data = findData(itemId)!;
-    console.log(itemId);
+
     let newCartItem: cartItem = {
       id: itemId,
       name: item.name,
