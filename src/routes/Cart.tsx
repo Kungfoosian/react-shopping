@@ -8,18 +8,16 @@ export default function Cart(props: any) {
   const [subTotal, setSubTotal] = useState(0);
 
   useEffect(() => {
-    setSubTotal(getSubTotal());
+    setSubTotal(getTotalOf(...data));
   }, [props.data])
 
-  function getSubTotal() {
+  function getTotalOf(...data:any[]) {
     let result = 0;
-
-    data.forEach(item => {
-      result += item.qty * item.price;
-
-      setSubTotal(result);
-    })
     
+    for(const item of data) {
+      result += item.qty * item.price;
+    }
+
     return result;
   }
 
@@ -37,7 +35,7 @@ export default function Cart(props: any) {
             <p className='product-price-container'>
               <span className='currency'>§</span>
 
-              <span className='product-price'>{item.price}</span>
+              <span className='product-price'>{getTotalOf(item)}</span>
             </p>
             
             <button onClick={() => props.handleEdit(item.id, 0) }>Delete</button>

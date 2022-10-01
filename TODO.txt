@@ -1,3 +1,2 @@
 styling
 
-adjust cart to update individual item price
