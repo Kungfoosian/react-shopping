@@ -49,8 +49,20 @@ export default function Cart(props: any) {
         </div>
       ))}
 
-      <p>Grand total: §{subTotal}</p>
-      <button onClick={props.handleSubmit}>Place Order</button>
+      <div className='total-container'>
+        <span>Grand total:</span> 
+        
+        <div className='price-container'>
+          <span className='currency'>§</span>
+
+          <span>{subTotal}</span>
+        </div>
+      </div>
+
+      <div className='choice-container'>
+        <div onClick={props.handleSubmit}>Place Order</div>
+        <div onClick={props.emptyCart} >Empty Cart</div>
+      </div>
     </> 
   }
 

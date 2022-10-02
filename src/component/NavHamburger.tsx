@@ -21,7 +21,7 @@ export default function NavHamburger(props: any) {
   }, [props.cartLength, currentPath]);
 
   return <>
-    <button className="nav-toggle" id="nav-toggle" onClick={handleClick} >
+    <button  id="nav-toggle" onClick={handleClick} >
       <span className={`hamburger ${switchToPositionClose ? 'hamburger-close' : '' }`}>
           <span className={switchToPositionClose ? 'lines top-close' : 'lines top-normal'} id="burger-top"></span>
           <span className={switchToPositionClose ? 'lines bottom-close' : 'lines bottom-normal'} id="burger-bottom"></span>

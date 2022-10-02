@@ -71,7 +71,9 @@ function App() {
     return editCart([...cartCopy!]);
   }
 
-  function submitOrder() { editCart([]) }
+  function emptyCart() { editCart([]) }
+
+  function submitOrder() { emptyCart() }
 
   const [useHamburgerNav, setUseHamburgerNav] = useState(false);
 
@@ -97,7 +99,7 @@ function App() {
           })
         }
          
-        <Route path="/cart" element={<Cart data={cart} handleSubmit={submitOrder} handleEdit={editItemInCart} />} />
+        <Route path="/cart" element={<Cart data={cart} handleSubmit={submitOrder} handleEdit={editItemInCart} emptyCart={emptyCart} />} />
         <Route path="*" element={<h2>You did an oopsie</h2>} />
       </Routes>
     </div>

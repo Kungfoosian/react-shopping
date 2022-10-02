@@ -4,6 +4,7 @@
 }
 
 #nav-toggle {
+  background-color: #fff;
   width: var(--burger-length);
   height: var(--burger-length);
 
